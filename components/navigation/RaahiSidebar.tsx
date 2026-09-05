@@ -19,12 +19,12 @@ export default function RaahiSidebar() {
   const [open, setOpen] = useState(false);
   const [linkedinOpen, setLinkedinOpen] = useState(false);
 
+  const isPlayerPage = pathname.startsWith("/player/");
+
   const closeSidebar = () => {
     setOpen(false);
     setLinkedinOpen(false);
   };
-
-  const isPlayerPage = pathname.startsWith("/player/");
 
   const handleBack = () => {
     closeSidebar();
@@ -33,6 +33,7 @@ export default function RaahiSidebar() {
 
   return (
     <>
+      {/* MENU BUTTON */}
       <button
         type="button"
         className="raahi-menu-button"
@@ -44,6 +45,7 @@ export default function RaahiSidebar() {
         <span />
       </button>
 
+      {/* OVERLAY */}
       {open && (
         <button
           type="button"
@@ -53,13 +55,19 @@ export default function RaahiSidebar() {
         />
       )}
 
+      {/* SIDEBAR */}
       <aside
         className={`raahi-sidebar ${
           open ? "raahi-sidebar-open" : ""
         }`}
         aria-label="Navigation menu"
       >
-        <div className="raahi-sidebar-top">
+        {/* TOP */}
+        <div className="raahi-sidebar-header">
+          <div className="raahi-sidebar-logo">
+            RAAHI
+          </div>
+
           <button
             type="button"
             className="raahi-sidebar-close"
@@ -70,8 +78,10 @@ export default function RaahiSidebar() {
           </button>
         </div>
 
+        {/* NAVIGATION */}
         <nav className="raahi-sidebar-nav">
 
+          {/* PLAYER PAGE OPTIONS */}
           {isPlayerPage && (
             <>
               <button
@@ -79,7 +89,11 @@ export default function RaahiSidebar() {
                 className="raahi-sidebar-link raahi-sidebar-button"
                 onClick={handleBack}
               >
-                ← Back
+                <span>← Back</span>
+
+                <span className="raahi-sidebar-number">
+                  01
+                </span>
               </button>
 
               <Link
@@ -87,7 +101,11 @@ export default function RaahiSidebar() {
                 className="raahi-sidebar-link"
                 onClick={closeSidebar}
               >
-                Home
+                <span>Home</span>
+
+                <span className="raahi-sidebar-number">
+                  02
+                </span>
               </Link>
 
               <Link
@@ -95,21 +113,45 @@ export default function RaahiSidebar() {
                 className="raahi-sidebar-link"
                 onClick={closeSidebar}
               >
-                Choose another mode →
+                <span>Modes</span>
+
+                <span className="raahi-sidebar-number">
+                  03
+                </span>
               </Link>
             </>
           )}
 
+          {/* NORMAL PAGES */}
           {!isPlayerPage && (
-            <Link
-              href="/"
-              className="raahi-sidebar-link"
-              onClick={closeSidebar}
-            >
-              Home
-            </Link>
+            <>
+              <Link
+                href="/"
+                className="raahi-sidebar-link"
+                onClick={closeSidebar}
+              >
+                <span>Home</span>
+
+                <span className="raahi-sidebar-number">
+                  01
+                </span>
+              </Link>
+
+              <Link
+                href="/modes"
+                className="raahi-sidebar-link"
+                onClick={closeSidebar}
+              >
+                <span>Modes</span>
+
+                <span className="raahi-sidebar-number">
+                  02
+                </span>
+              </Link>
+            </>
           )}
 
+          {/* LINKEDIN */}
           <div className="raahi-sidebar-item">
             <button
               type="button"
@@ -122,10 +164,12 @@ export default function RaahiSidebar() {
 
               <span
                 className={`raahi-sidebar-small-arrow ${
-                  linkedinOpen ? "raahi-arrow-open" : ""
+                  linkedinOpen
+                    ? "raahi-arrow-open"
+                    : ""
                 }`}
               >
-                ▾
+                +
               </span>
             </button>
 
@@ -152,6 +196,7 @@ export default function RaahiSidebar() {
             )}
           </div>
 
+          {/* GITHUB */}
           <a
             href={GITHUB_LINK}
             target="_blank"
@@ -159,18 +204,32 @@ export default function RaahiSidebar() {
             className="raahi-sidebar-link"
             onClick={closeSidebar}
           >
-            GitHub ↗
+            <span>GitHub</span>
+
+            <span className="raahi-sidebar-external">
+              ↗
+            </span>
           </a>
 
+          {/* ABOUT */}
           <Link
             href="/about"
             className="raahi-sidebar-link"
             onClick={closeSidebar}
           >
-            About →
+            <span>About</span>
+
+            <span className="raahi-sidebar-number">
+              {isPlayerPage ? "04" : "03"}
+            </span>
           </Link>
 
         </nav>
+
+        {/* FOOTER */}
+        <div className="raahi-sidebar-footer">
+          Music for every journey
+        </div>
       </aside>
     </>
   );

@@ -34,273 +34,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.RAAHI-home {
-  min-height: 100vh;
-  overflow-x: hidden;
-  background: var(--dark);
-}
-
-.hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 75% 35%,
-      rgba(175, 125, 72, 0.24),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at 20% 70%,
-      rgba(75, 101, 92, 0.22),
-      transparent 32%
-    ),
-    linear-gradient(
-      125deg,
-      #141713 0%,
-      #27251f 38%,
-      #4a3829 70%,
-      #1b211d 100%
-    );
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.14;
-  pointer-events: none;
-
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    );
-
-  background-size: 80px 80px;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 7, 5, 0.38),
-      transparent 35%,
-      rgba(5, 7, 5, 0.72)
-    );
-}
-
-.site-header {
-  position: relative;
-  z-index: 5;
-
-  width: min(1320px, calc(100% - 64px));
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 30px 0;
-}
-
-.brand {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-}
-
-.brand span,
-.hero h1 span {
-  color: var(--accent);
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.header-nav > a {
-  color: rgba(238, 233, 223, 0.72);
-  transition: color 180ms ease;
-}
-
-.header-nav > a:hover {
-  color: var(--cream);
-}
-
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  margin-left: 4px;
-}
-
-.social-links a {
-  width: 31px;
-  height: 31px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(238, 233, 223, 0.28);
-  border-radius: 50%;
-
-  color: rgba(238, 233, 223, 0.82);
-
-  transition:
-    border-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.social-links a:hover {
-  color: var(--cream);
-  border-color: rgba(238, 233, 223, 0.7);
-  transform: translateY(-2px);
-}
-
-.social-links svg {
-  width: 15px;
-  height: 15px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  flex: 1;
-
-  width: min(1320px, calc(100% - 64px));
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  padding-bottom: 60px;
-}
-
-.eyebrow {
-  margin: 0 0 20px;
-
-  color: rgba(238, 233, 223, 0.58);
-
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-}
-
-.hero h1 {
-  margin: 0;
-
-  font-size: clamp(76px, 12vw, 178px);
-  line-height: 0.86;
-  font-weight: 500;
-  letter-spacing: -0.065em;
-
-  text-shadow:
-    0 20px 80px rgba(0, 0, 0, 0.3);
-}
-
-.hero-description {
-  margin: 30px 0 34px;
-
-  color: rgba(238, 233, 223, 0.75);
-
-  font-size: clamp(14px, 1.4vw, 18px);
-  line-height: 1.75;
-  font-weight: 300;
-}
-
-.primary-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 24px;
-
-  padding: 13px 18px 13px 21px;
-
-  border: 1px solid rgba(238, 233, 223, 0.3);
-  border-radius: 999px;
-
-  background: rgba(238, 233, 223, 0.08);
-  backdrop-filter: blur(14px);
-
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    transform 180ms ease;
-}
-
-.primary-button span {
-  font-size: 17px;
-  line-height: 1;
-}
-
-.primary-button:hover {
-  background: rgba(238, 233, 223, 0.14);
-  border-color: rgba(238, 233, 223, 0.6);
-  transform: translateY(-2px);
-}
-
-.hero-bottom {
-  position: relative;
-  z-index: 3;
-
-  width: min(1320px, calc(100% - 64px));
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  padding: 0 0 27px;
-
-  color: rgba(238, 233, 223, 0.42);
-
-  font-size: 9px;
-  letter-spacing: 0.18em;
-}
-
-.hero-line {
-  width: 42px;
-  height: 1px;
-  background: rgba(238, 233, 223, 0.25);
-}
-
-.about-section,
-.modes-section {
-  width: min(1320px, calc(100% - 64px));
-  margin: 0 auto;
-}
-
-.about-section {
-  padding: 150px 0;
-}
-
 .section-label {
   color: rgba(238, 233, 223, 0.42);
 
@@ -309,753 +42,47 @@ a {
   text-transform: uppercase;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 10%;
-  margin-top: 70px;
-}
-
-.about-grid h2,
-.section-heading h2,
-.closing-section h2 {
-  margin: 0;
-
-  font-size: clamp(42px, 5.5vw, 78px);
-  line-height: 1.02;
-  font-weight: 400;
-  letter-spacing: -0.045em;
-}
-
-.about-grid h2 em,
-.closing-section h2 em {
-  color: var(--accent);
-  font-family: Georgia, serif;
-  font-weight: 400;
-}
-
-.about-copy {
-  max-width: 480px;
-  padding-top: 10px;
-}
-
-.about-copy p {
-  margin: 0 0 22px;
-
-  color: var(--muted);
-
-  font-size: 15px;
-  line-height: 1.9;
-  font-weight: 300;
-}
-
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  margin-top: 20px;
-
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  color: var(--cream);
-}
-
-.text-link span {
-  transition: transform 180ms ease;
-}
-
-.text-link:hover span {
-  transform: translate(3px, -3px);
-}
-
-.modes-section {
-  padding: 40px 0 150px;
-}
-
-.section-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-
-  margin-bottom: 55px;
-}
-
-.section-heading h2 {
-  margin-top: 18px;
-  font-size: clamp(38px, 4.5vw, 64px);
-}
-
-.mode-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.mode-preview-card {
-  display: block;
-}
-
-.mode-art {
-  position: relative;
-  aspect-ratio: 1.25 / 1;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(238, 233, 223, 0.12);
-  border-radius: 18px;
-
-  transition:
-    transform 300ms ease,
-    border-color 300ms ease;
-}
-
-.mode-preview-card:hover .mode-art {
-  transform: translateY(-5px);
-  border-color: rgba(238, 233, 223, 0.32);
-}
-
-.mode-art::before,
-.mode-art::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-
-.mode-art::before {
-  width: 65%;
-  height: 65%;
-  right: -10%;
-  top: -20%;
-  background: rgba(205, 156, 88, 0.24);
-}
-
-.mode-art::after {
-  width: 55%;
-  height: 55%;
-  left: -15%;
-  bottom: -20%;
-  background: rgba(66, 91, 78, 0.35);
-}
-
-.mode-art-bus {
-  background: linear-gradient(135deg, #28312d, #735c3f);
-}
-
-.mode-art-truck {
-  background: linear-gradient(135deg, #252b26, #7b4e38);
-}
-
-.mode-art-rickshaw {
-  background: linear-gradient(135deg, #31413b, #8a6c47);
-}
-
-.mode-art-mistri {
-  background: linear-gradient(135deg, #33312a, #9a6949);
-}
-
-.mode-art-carpenter {
-  background: linear-gradient(135deg, #302c25, #71563d);
-}
-
-.mode-art-RAAHI {
-  background: linear-gradient(135deg, #25332f, #5e6670);
-}
-
-.art-glow {
-  position: absolute;
-  inset: 20%;
-
-  border-radius: 50%;
-
-  background: rgba(238, 233, 223, 0.05);
-  filter: blur(30px);
-}
-
-.mode-number {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-
-  color: rgba(238, 233, 223, 0.55);
-
-  font-size: 10px;
-  letter-spacing: 0.12em;
-}
-
-.mode-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 16px 3px 0;
-
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-
-.mode-card-footer span:last-child {
-  color: var(--muted);
-}
-
-.closing-section {
-  min-height: 70vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  padding: 100px 32px;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(182, 140, 88, 0.14),
-      transparent 42%
-    ),
-    var(--dark-soft);
-}
-
-.closing-section h2 {
-  margin-bottom: 40px;
-}
-
-.closing-section .primary-button {
-  margin-top: 4px;
-}
-
-.site-footer {
-  width: min(1320px, calc(100% - 64px));
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 28px 0;
-
-  border-top: 1px solid var(--line);
-
-  color: rgba(238, 233, 223, 0.38);
-
-  font-size: 9px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
 @media (max-width: 760px) {
-  .site-header,
-  .hero-content,
-  .hero-bottom,
-  .about-section,
-  .modes-section,
-  .site-footer {
-    width: min(100% - 34px, 1320px);
-  }
 
-  .site-header {
-    padding-top: 22px;
-  }
+  
 
-  .header-nav > a {
-    display: none;
-  }
+  
 
-  .social-links {
-    margin-left: 0;
-  }
+  
 
-  .hero h1 {
-    font-size: clamp(70px, 24vw, 120px);
-  }
+  
 
-  .hero-description {
-    font-size: 13px;
-  }
+  
 
-  .about-section {
-    padding: 100px 0;
-  }
+  
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    margin-top: 45px;
-  }
+  
 
-  .about-copy {
-    padding-top: 0;
-  }
-
-  .modes-section {
-    padding-bottom: 100px;
-  }
-
-  .section-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .mode-preview-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .mode-art {
-    border-radius: 13px;
-  }
-
-  .mode-card-footer {
-    font-size: 10px;
-  }
-
-  .closing-section {
-    min-height: 60vh;
-    padding: 80px 20px;
-  }
-
-  .site-footer {
-    gap: 20px;
-    font-size: 8px;
-  }
-}
-
-.modes-page {
-  min-height: 100svh;
-  padding: 0 32px;
-
-  background:
-    radial-gradient(
-      circle at 80% 15%,
-      rgba(166, 123, 73, 0.09),
-      transparent 28%
-    ),
-    #0d0e0d;
-
-  color: var(--cream);
-}
-
-.modes-header {
-  width: min(1320px, 100%);
-  margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 30px 0;
-}
-
-.modes-brand {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-}
-
-.modes-brand span {
-  color: var(--accent);
-}
-
-.back-home {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
-  color: rgba(238, 233, 223, 0.58);
-
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  transition: color 180ms ease;
-}
-
-.back-home:hover {
-  color: var(--cream);
-}
-
-.back-home svg {
-  width: 15px;
-  height: 15px;
-}
-
-.modes-intro {
-  width: min(1320px, 100%);
-  margin: 0 auto;
-
-  padding: 100px 0 85px;
-}
-
-.modes-intro h1 {
-  margin: 18px 0 28px;
-
-  font-size: clamp(58px, 8vw, 112px);
-  line-height: 0.91;
-  font-weight: 400;
-  letter-spacing: -0.06em;
-}
-
-.modes-intro h1 em {
-  color: var(--accent);
-  font-family: Georgia, serif;
-  font-weight: 400;
-}
-
-.modes-description {
-  margin: 0;
-
-  color: var(--muted);
-
-  font-size: 14px;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-.modes-content {
-  width: min(1320px, 100%);
-  margin: 0 auto;
-}
-
-.modes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px 18px;
-}
-
-.mode-card {
-  display: block;
-  min-width: 0;
-}
-
-.mode-card-image {
-  position: relative;
-
-  aspect-ratio: 0.82 / 1;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(238, 233, 223, 0.12);
-  border-radius: 17px;
-
-  background:
-    radial-gradient(
-      circle at 72% 23%,
-      rgba(210, 169, 108, 0.28),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #242a26,
-      #5c4c3c 55%,
-      #202621
-    );
-
-  transition:
-    transform 300ms ease,
-    border-color 300ms ease;
-}
-
-.mode-card:nth-child(2n) .mode-card-image {
-  background:
-    radial-gradient(
-      circle at 28% 30%,
-      rgba(180, 124, 83, 0.25),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #272724,
-      #684b3a 60%,
-      #20231f
-    );
-}
-
-.mode-card:nth-child(3n) .mode-card-image {
-  background:
-    radial-gradient(
-      circle at 68% 70%,
-      rgba(91, 119, 103, 0.3),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      #202c28,
-      #526051 58%,
-      #222420
-    );
-}
-
-.mode-card:hover .mode-card-image {
-  transform: translateY(-6px);
-  border-color: rgba(238, 233, 223, 0.35);
-}
-
-.mode-card-shade {
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.05),
-      transparent 45%,
-      rgba(0, 0, 0, 0.45)
-    );
-}
-
-.mode-card-number {
-  position: absolute;
-  top: 17px;
-  left: 17px;
-
-  color: rgba(238, 233, 223, 0.55);
-
-  font-size: 9px;
-  letter-spacing: 0.16em;
-}
-
-.mode-card-arrow {
-  position: absolute;
-  right: 17px;
-  bottom: 15px;
-
-  width: 29px;
-  height: 29px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(238, 233, 223, 0.22);
-  border-radius: 50%;
-
-  color: rgba(238, 233, 223, 0.8);
-
-  font-size: 14px;
-
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
-}
-
-.mode-card:hover .mode-card-arrow {
-  background: rgba(238, 233, 223, 0.1);
-  transform: translate(2px, -2px);
-}
-
-.mode-card-info {
-  padding: 14px 3px 0;
-}
-
-.mode-card-info h2 {
-  margin: 0;
-
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.mode-card-info p {
-  margin: 6px 0 0;
-
-  color: rgba(184, 177, 165, 0.72);
-
-  font-size: 10px;
-  line-height: 1.55;
-  font-weight: 300;
-}
-
-.modes-footer {
-  width: min(1320px, 100%);
-  margin: 100px auto 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 24px 0 28px;
-
-  border-top: 1px solid var(--line);
-
-  color: rgba(238, 233, 223, 0.36);
-
-  font-size: 9px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  
 }
 
 @media (max-width: 1000px) {
-  .modes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
 
 @media (max-width: 700px) {
-  .modes-page {
-    padding: 0 17px;
-  }
 
-  .modes-header {
-    padding: 22px 0;
-  }
+  
 
-  .modes-intro {
-    padding: 75px 0 55px;
-  }
+  
 
-  .modes-intro h1 {
-    font-size: clamp(52px, 16vw, 82px);
-  }
+  
 
-  .modes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 12px;
-  }
+  
 
-  .mode-card-image {
-    border-radius: 13px;
-  }
-
-  .mode-card-info h2 {
-    font-size: 11px;
-  }
-
-  .mode-card-info p {
-    font-size: 9px;
-  }
-
-  .modes-footer {
-    margin-top: 70px;
-  }
 }
 
 /* =========================================================
    RAAHI PLAYER
    ========================================================= */
 
-.player-page {
-  position: relative;
-  width: 100%;
-  height: 100svh;
-  min-height: 560px;
-  overflow: hidden;
-  background: #1b211d;
-  color: var(--cream);
-}
-
-.player-background {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 70% 28%,
-      rgba(178, 132, 79, 0.28),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 20% 72%,
-      rgba(63, 86, 72, 0.35),
-      transparent 34%
-    ),
-    linear-gradient(
-      135deg,
-      #18201b,
-      #514233 55%,
-      #242923
-    );
-  transform: scale(1.02);
-}
-
-.player-background-glow {
-  position: absolute;
-  width: 42vw;
-  height: 42vw;
-  right: 8%;
-  top: 12%;
-  border-radius: 50%;
-  background: rgba(211, 167, 101, 0.13);
-  filter: blur(90px);
-}
-
-.player-background-vignette {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 7, 5, 0.45),
-      transparent 35%,
-      rgba(5, 7, 5, 0.58)
-    ),
-    radial-gradient(
-      circle,
-      transparent 35%,
-      rgba(0, 0, 0, 0.48) 100%
-    );
-}
-
-.player-top {
-  position: absolute;
-  z-index: 80;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 26px 30px;
-  pointer-events: none;
-}
-
-.player-top > * {
-  pointer-events: auto;
-}
-
-.player-center {
-  position: absolute;
-  z-index: 10;
-  left: 50%;
-  top: 43%;
-  transform: translate(-50%, -50%);
-  width: calc(100% - 40px);
-  text-align: center;
-}
-
-.player-center h1 {
-  max-width: min(900px, 82vw);
-  margin: 0 auto;
-  color: var(--cream);
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-  font-size: clamp(42px, 7vw, 92px);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  text-wrap: balance;
-  text-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.3);
-}
-
 /* If the page still renders a mode description,
    keep it subtle and visually secondary. */
-.player-center .player-tagline {
-  max-width: 520px;
-  margin: 20px auto 0;
-  color: rgba(238, 233, 223, 0.58);
-  font-size: 12px;
-  line-height: 1.7;
-  font-weight: 300;
-  letter-spacing: 0.01em;
-}
 
 /* =========================================================
    LISTENING INDICATOR
@@ -1149,15 +176,6 @@ a {
 /* =========================================================
    PLAYER BAR
    ========================================================= */
-
-.player-bottom {
-  position: absolute;
-  z-index: 30;
-  left: 50%;
-  bottom: 34px;
-  width: min(720px, calc(100vw - 48px));
-  transform: translateX(-50%);
-}
 
 .player-bar {
   position: relative;
@@ -1395,34 +413,12 @@ a {
    ========================================================= */
 
 @media (max-width: 650px) {
-  .player-page {
-    min-height: 100svh;
-  }
 
-  .player-top {
-    padding: 20px 17px;
-  }
+  
 
-  .player-center {
-    top: 40%;
-    width: calc(100% - 34px);
-  }
+  
 
-  .player-center h1 {
-    max-width: 88vw;
-    font-size: clamp(36px, 12vw, 60px);
-  }
-
-  .player-center .player-tagline {
-    max-width: 310px;
-    margin-top: 15px;
-    font-size: 10px;
-  }
-
-  .player-bottom {
-    bottom: 18px;
-    width: calc(100vw - 28px);
-  }
+  
 
   .player-bar {
     min-height: 59px;
@@ -2174,302 +1170,49 @@ nextjs-portal {
    RAAHI PLAYER NAVIGATION OVERRIDES
    ========================================================= */
 
-.player-page .player-top {
-  position: absolute;
-  top: 28px;
-  left: 30px;
-  right: 30px;
-
-  z-index: 80;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  pointer-events: none;
-}
-
-.player-page .player-top > * {
-  pointer-events: auto;
-}
-
 /* Keep the RAAHI logo compact on player pages */
-
-.player-page .raahi-logo {
-  transform-origin: left center;
-}
 
 /* Remove the old player branding styling */
 
-.player-page .player-brand {
-  display: none !important;
-}
-
 /* Mode title */
-
-.player-page .player-center {
-  z-index: 10;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-.player-page .player-center h1 {
-  max-width: min(900px, 82vw);
-
-  margin: 0;
-
-  color: var(--cream);
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(42px, 7vw, 92px);
-
-  font-weight: 500;
-
-  line-height: 0.95;
-
-  letter-spacing: -0.045em;
-
-  text-wrap: balance;
-
-  text-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.3);
-}
 
 /* Player bar */
 
-.player-page .player-bottom {
-  z-index: 30;
-}
-
 /* Listening indicator should stay above player */
-
-.player-page .listening-indicator {
-  z-index: 70;
-}
 
 /* Compact player */
 
-.player-page .player-bar {
-  width: min(720px, calc(100vw - 48px));
-
-  transform-origin: center bottom;
-
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease;
-}
-
-.player-page .player-bar:hover {
-  transform: translateY(-4px) scale(1.015);
-
-  box-shadow:
-    0 20px 70px rgba(0, 0, 0, 0.28);
-}
-
 /* Slightly smaller controls */
 
-.player-page .player-controls {
-  gap: 8px;
-}
-
-.player-page .player-control {
-  width: 38px;
-  height: 38px;
-}
-
-.player-page .player-play {
-  width: 46px;
-  height: 46px;
-}
-
 /* Keep the player from becoming too wide */
-
-.player-page .song-info {
-  min-width: 0;
-  max-width: 230px;
-}
-
-.player-page .song-info strong,
-.player-page .song-info span {
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-}
 
 /* Mobile */
 
 @media (max-width: 640px) {
-  .player-page .player-top {
-    top: 18px;
-    left: 18px;
-    right: 18px;
-  }
 
-  .player-page .player-center h1 {
-    max-width: 88vw;
+  
 
-    font-size: clamp(36px, 12vw, 60px);
-  }
+  
 
-  .player-page .player-bar {
-    width: calc(100vw - 28px);
-  }
-
-  .player-page .song-info {
-    max-width: 145px;
-  }
-
-  .player-page .player-control {
-    width: 34px;
-    height: 34px;
-  }
-
-  .player-page .player-play {
-    width: 42px;
-    height: 42px;
-  }
+  
 }
 
 /* =========================================================
    PLAYER — LISTENING INDICATOR + COMPACT POPUP
    ========================================================= */
 
-.player-page .player-listening-indicator {
-  position: absolute;
-
-  top: 82px;
-  left: 50%;
-
-  z-index: 70;
-
-  margin: 0;
-
-  transform: translateX(-50%);
-
-  padding: 7px 13px;
-
-  border: 1px solid rgba(238, 233, 223, 0.12);
-  border-radius: 999px;
-
-  background: rgba(12, 13, 12, 0.42);
-
-  backdrop-filter: blur(16px);
-
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.18);
-
-  font-size: 9px;
-
-  transition:
-    transform 220ms ease,
-    background 220ms ease,
-    border-color 220ms ease;
-}
-
-.player-page .player-listening-indicator:hover {
-  transform:
-    translateX(-50%)
-    translateY(-2px);
-
-  background: rgba(238, 233, 223, 0.07);
-
-  border-color:
-    rgba(238, 233, 223, 0.25);
-}
-
 /* Player popup feel */
 
-.player-page .player-bar {
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease;
-}
-
-.player-page .player-bar:hover {
-  transform: translateY(-4px);
-
-  border-color:
-    rgba(238, 233, 223, 0.27);
-
-  box-shadow:
-    0 24px 65px rgba(0, 0, 0, 0.34);
-}
-
 /* Make the player slightly more compact */
-
-.player-page .player-bar {
-  min-height: 62px;
-
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.player-page .song-artwork {
-  width: 43px;
-  height: 43px;
-
-  border-radius: 10px;
-}
-
-.player-page .song-info {
-  margin-left: 10px;
-}
-
-.player-page .player-control {
-  width: 35px;
-  height: 35px;
-}
-
-.player-page .player-play {
-  width: 43px;
-  height: 43px;
-}
-
-.player-page .player-controls {
-  gap: 5px;
-}
 
 /* Mobile */
 
 @media (max-width: 650px) {
-  .player-page .player-listening-indicator {
-    top: 70px;
 
-    padding: 6px 11px;
+  
 
-    font-size: 8px;
-  }
+  
 
-  .player-page .player-bar {
-    min-height: 59px;
-  }
-
-  .player-page .song-artwork {
-    width: 40px;
-    height: 40px;
-  }
-
-  .player-page .player-control {
-    width: 32px;
-    height: 32px;
-  }
-
-  .player-page .player-play {
-    width: 38px;
-    height: 38px;
-  }
 }
 
 /* =========================================================
@@ -2986,4 +1729,3459 @@ nextjs-portal {
     width: min(320px, 90vw);
     padding: 20px;
   }
+}
+
+/* =========================================================
+   RAAHI — AUTHORITATIVE FINAL MODES + PLAYER FIX
+   Keep this block at the very end of globals.css
+========================================================= */
+
+/* ---------- Global page safety ---------- */
+
+html,
+body {
+  max-width: 100%;
+}
+
+.modes-page,
+.player-page-new {
+  overscroll-behavior: none;
+}
+
+/* =========================================================
+   MODES PAGE
+========================================================= */
+
+/* Real layout used by app/modes/page.tsx */
+
+.modes-page-layout {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(260px, 29%) minmax(0, 1fr);
+
+  gap: clamp(28px, 3vw, 56px);
+
+  padding: 86px 54px 44px 118px;
+
+  overflow: hidden;
+}
+
+/* ---------- Left side ---------- */
+
+.modes-small-text {
+  margin: 0 0 18px;
+
+  color: rgba(245, 242, 234, 0.48);
+
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+}
+
+/* ---------- Right side ---------- */
+
+.modes-display {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.modes-scroll-wrapper {
+  width: 100%;
+  min-width: 0;
+  height: min(66vh, 570px);
+
+  display: flex;
+  align-items: center;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 8px 4px 20px;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 242, 234, 0.28) transparent;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.modes-scroll-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+.modes-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modes-scroll-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(245, 242, 234, 0.28);
+}
+
+/* Horizontal cards — only this section scrolls */
+
+.modes-grid-new {
+  width: max-content;
+  min-width: max-content;
+  height: 100%;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(245px, 20vw, 310px);
+  grid-template-rows: 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-right: 34px;
+}
+
+/* ---------- Mode card ---------- */
+
+.mode-card-new {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+
+  background: #111;
+
+  color: #fff;
+  text-decoration: none;
+
+  scroll-snap-align: start;
+
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.mode-card-new:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 255, 255, 0.40);
+
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.42);
+}
+
+.mode-card-new-image {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 600ms ease;
+}
+
+.mode-card-new:hover .mode-card-new-image {
+  transform: scale(1.055);
+}
+
+.mode-card-new-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.16) 0%,
+      rgba(0, 0, 0, 0.05) 42%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.18),
+      transparent 50%,
+      rgba(0, 0, 0, 0.18)
+    );
+}
+
+.mode-card-new-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+}
+
+.mode-card-new-title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  color: #fff;
+
+  text-align: center;
+
+  font-family:
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    sans-serif;
+
+  font-size: clamp(25px, 2.2vw, 38px);
+  font-weight: 600;
+  line-height: 1.18;
+
+  text-shadow: 0 5px 22px rgba(0, 0, 0, 0.90);
+}
+
+.mode-card-new-number {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+
+  z-index: 3;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+
+.mode-card-new-arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  color: #fff;
+
+  font-family: var(--font-poppins), "Poppins", sans-serif;
+  font-size: 22px;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.mode-card-new:hover .mode-card-new-arrow {
+  transform: translate(3px, -3px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   NEW PLAYER PAGE
+========================================================= */
+
+.player-page-new {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #090909;
+  color: #fff;
+}
+
+/* Background must always remain visible */
+
+.player-page-new-background {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  transform: scale(1.025);
+
+  filter: brightness(0.82) saturate(0.92);
+}
+
+.player-page-new-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 1 !important;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.10) 42%,
+      rgba(0, 0, 0, 0.68) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.28),
+      transparent 48%,
+      rgba(0, 0, 0, 0.22)
+    );
+}
+
+/* Center title */
+
+.player-page-new-content {
+  position: absolute !important;
+  inset: 0 !important;
+
+  z-index: 2 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 80px 120px 170px !important;
+
+  pointer-events: none;
+}
+
+.player-page-new-title {
+  width: min(950px, calc(100vw - 80px));
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 auto !important;
+
+  color: #fff !important;
+
+  text-align: center !important;
+
+  font-family:
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    Georgia,
+    serif !important;
+
+  font-size: clamp(48px, 7vw, 108px) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
+
+  text-shadow: 0 8px 38px rgba(0, 0, 0, 0.78);
+}
+
+.player-page-new-title span {
+  display: block !important;
+  width: 100%;
+}
+
+/* Bottom controls */
+
+.player-page-new-controls {
+  position: fixed !important;
+
+  left: 50% !important;
+  bottom: 28px !important;
+
+  z-index: 20 !important;
+
+  width: min(760px, calc(100vw - 48px)) !important;
+
+  transform: translateX(-50%) !important;
+}
+
+/* Neutralize old player positioning inside the new page */
+
+.player-page-new-controls .player-bottom {
+  position: static !important;
+
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+
+  transform: none !important;
+}
+
+.player-page-new-controls .player-controls-stack {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+
+  gap: 10px !important;
+}
+
+.player-page-new-controls .player-listening-indicator {
+  position: static !important;
+
+  order: 1;
+
+  margin: 0 !important;
+
+  transform: none !important;
+}
+
+.player-page-new-controls .player-bar {
+  position: relative !important;
+
+  order: 2;
+
+  width: 100% !important;
+  min-height: 68px !important;
+
+  border-radius: 18px !important;
+
+  background: rgba(10, 11, 11, 0.72) !important;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+}
+
+/* =========================================================
+   SIDEBAR — FINAL SINGLE SOURCE
+========================================================= */
+
+.raahi-menu-button {
+  position: fixed !important;
+
+  top: 26px !important;
+  left: 26px !important;
+  right: auto !important;
+
+  z-index: 1000 !important;
+
+  width: 48px !important;
+  height: 48px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 6px !important;
+
+  padding: 0 12px !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 13px !important;
+
+  background: rgba(9, 10, 10, 0.72) !important;
+
+  color: #fff !important;
+
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+}
+
+.raahi-menu-button span {
+  width: 23px !important;
+  height: 1.5px !important;
+}
+
+.raahi-sidebar-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  z-index: 1100 !important;
+
+  background: rgba(0, 0, 0, 0.54) !important;
+
+  backdrop-filter: blur(4px);
+}
+
+.raahi-sidebar {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  z-index: 1200 !important;
+
+  width: min(360px, 90vw) !important;
+  height: 100svh !important;
+
+  margin: 0 !important;
+  padding: 28px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  background: rgba(14, 15, 15, 0.98) !important;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.10) !important;
+  border-left: 0 !important;
+
+  border-radius: 0 22px 22px 0 !important;
+
+  transform: translateX(-105%) !important;
+
+  pointer-events: none !important;
+
+  overflow-y: auto !important;
+
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+
+  box-sizing: border-box !important;
+}
+
+.raahi-sidebar.raahi-sidebar-open {
+  transform: translateX(0) !important;
+
+  pointer-events: auto !important;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .modes-page-layout {
+    grid-template-columns: minmax(220px, 28%) minmax(0, 1fr);
+
+    gap: 32px;
+
+    padding: 82px 30px 38px 88px;
+  }
+
+  .modes-grid-new {
+    grid-auto-columns: clamp(230px, 28vw, 290px);
+  }
+
+  .modes-scroll-wrapper {
+    height: min(62vh, 520px);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .modes-page-layout {
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+
+    padding: 82px 18px 24px;
+
+    overflow: hidden;
+  }
+
+  .modes-small-text {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
+  
+
+  .modes-display {
+    flex: 1;
+
+    min-height: 0;
+  }
+
+  .modes-scroll-wrapper {
+    height: 100%;
+
+    align-items: center;
+
+    padding-bottom: 16px;
+  }
+
+  .modes-grid-new {
+    grid-auto-columns: minmax(235px, 72vw);
+
+    gap: 14px;
+  }
+
+  .mode-card-new {
+    min-height: 360px;
+
+    border-radius: 18px;
+  }
+
+  .mode-card-new-title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+
+  .player-page-new-content {
+    padding: 80px 20px 170px !important;
+  }
+
+  .player-page-new-title {
+    width: min(100%, calc(100vw - 32px));
+
+    font-size: clamp(40px, 12vw, 68px) !important;
+  }
+
+  .player-page-new-controls {
+    bottom: 16px !important;
+
+    width: calc(100vw - 24px) !important;
+  }
+
+  .raahi-menu-button {
+    top: 16px !important;
+    left: 16px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .raahi-sidebar {
+    width: min(340px, 92vw) !important;
+    padding: 22px !important;
+  }
+}
+
+/* =========================================================
+   RAAHI MODES — FINAL CLEAN LAYOUT
+========================================================= */
+
+.modes-page-new {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  color: #f5f2ea;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 9, 0.96) 0%,
+      rgba(8, 9, 9, 0.86) 38%,
+      rgba(8, 9, 9, 0.68) 100%
+    ),
+    url("/images/modes/truck-wala.webp");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.modes-page-layout {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 32%)
+    minmax(0, 1fr);
+
+  gap: 42px;
+
+  padding:
+    80px
+    55px
+    45px
+    115px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT SIDE — CHOOSE YOUR MODE
+========================================================= */
+
+.modes-page-heading {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.modes-page-heading h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(46px, 5vw, 78px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  color: #f4efe6;
+
+  text-align: left;
+
+  text-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.42);
+}
+
+/* =========================================================
+   RIGHT SIDE — ONLY THIS SECTION SCROLLS
+========================================================= */
+
+/* =========================================================
+   MODES SLIDER
+========================================================= */
+
+.modes-page-list {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+
+.modes-slider {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* HORIZONTAL SCROLL AREA */
+
+.modes-scroll-wrapper {
+  width: 100%;
+  height: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(255, 255, 255, 0.35)
+    transparent;
+
+  -webkit-overflow-scrolling: touch;
+
+  padding-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* CHROME / EDGE SCROLLBAR */
+
+.modes-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+
+.modes-scroll-wrapper::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border-radius: 999px;
+}
+
+
+.modes-scroll-wrapper::-webkit-scrollbar-thumb {
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 999px;
+}
+
+
+.modes-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(255, 255, 255, 0.55);
+}
+
+
+/* MODES ROW */
+
+.modes-grid-new {
+  width: max-content;
+
+  min-width: 100%;
+
+  height: calc(100% - 26px);
+
+  display: grid;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns:
+    clamp(250px, 24vw, 330px);
+
+  grid-template-rows: 1fr;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding-right: 80px;
+
+  box-sizing: border-box;
+}
+
+
+/* NEXT BUTTON */
+
+.modes-next-button {
+  position: absolute;
+
+  right: 18px;
+  top: 50%;
+
+  z-index: 20;
+
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+
+  place-items: center;
+
+  transform:
+    translateY(-50%);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 14px;
+
+  background:
+    rgba(15, 16, 17, 0.78);
+
+  color: #fff;
+
+  backdrop-filter:
+    blur(14px);
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+
+.modes-next-button:hover {
+  transform:
+    translateY(-50%)
+    scale(1.06);
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   HORIZONTAL MODE CARDS
+========================================================= */
+
+.modes-grid-new {
+  width: max-content;
+
+  display: grid;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns:
+    clamp(245px, 22vw, 320px);
+
+  grid-template-rows: 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-right: 28px;
+}
+
+/* =========================================================
+   MODE CARD
+========================================================= */
+
+.mode-card-new {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(380px, 60vh, 540px);
+
+  min-height: 380px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  border-radius: 20px;
+
+  background: #111;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.mode-card-new:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(255, 255, 255, 0.42);
+
+  box-shadow:
+    0 22px 60px
+    rgba(0, 0, 0, 0.42);
+}
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.mode-card-new-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  z-index: -2;
+
+  transition:
+    transform 550ms ease;
+}
+
+.mode-card-new:hover .mode-card-new-image {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.mode-card-new-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.12) 45%,
+      rgba(0, 0, 0, 0.68) 100%
+    );
+}
+
+/* =========================================================
+   CENTER CONTENT
+========================================================= */
+
+.mode-card-new-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+/* =========================================================
+   MODE NAME — PERFECT CENTER
+========================================================= */
+
+.mode-card-new-title {
+  margin: 0;
+
+  width: 100%;
+
+  font-family:
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    sans-serif;
+
+  font-size:
+    clamp(28px, 2.4vw, 42px);
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  letter-spacing: 0;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 5px 24px
+    rgba(0, 0, 0, 0.9);
+}
+
+/* =========================================================
+   MODE NUMBER
+========================================================= */
+
+.mode-card-new-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  z-index: 5;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.mode-card-new-arrow {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 11px;
+
+  background:
+    rgba(0, 0, 0, 0.22);
+
+  backdrop-filter:
+    blur(10px);
+
+  color: white;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 22px;
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .modes-page-layout {
+    grid-template-columns:
+      minmax(220px, 28%)
+      minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding:
+      80px
+      30px
+      35px
+      90px;
+  }
+
+  .modes-grid-new {
+    grid-auto-columns:
+      clamp(240px, 30vw, 300px);
+  }
+
+  .mode-card-new {
+    height:
+      clamp(360px, 58vh, 500px);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .modes-page-new {
+    position: fixed;
+
+    width: 100%;
+    height: 100svh;
+
+    overflow: hidden;
+  }
+
+  .modes-page-layout {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding:
+      90px
+      18px
+      30px;
+  }
+
+  .modes-page-heading {
+    height: auto;
+
+    align-items: flex-start;
+  }
+
+  .modes-page-heading h1 {
+    font-size:
+      clamp(38px, 11vw, 58px);
+  }
+
+  .modes-page-list {
+    height: auto;
+
+    min-height: 440px;
+
+    flex: 1;
+  }
+
+  .modes-scroll-wrapper {
+    padding-bottom: 22px;
+  }
+
+  .modes-grid-new {
+    grid-auto-columns:
+      minmax(250px, 78vw);
+
+    gap: 14px;
+  }
+
+  .mode-card-new {
+    height: 430px;
+
+    min-height: 430px;
+
+    border-radius: 18px;
+  }
+
+  .mode-card-new-title {
+    font-size:
+      clamp(25px, 7vw, 34px);
+  }
+}
+
+/* =========================================================
+   RAAHI PLAYER — FINAL CLEAN UI
+========================================================= */
+
+.player-page-new {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #090909;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   FULL SCREEN BACKGROUND
+========================================================= */
+
+.player-page-new-background {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  transform: scale(1.025);
+
+  filter:
+    brightness(0.78)
+    saturate(0.9);
+}
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.player-page-new-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.08) 40%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.22) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.22) 100%
+    );
+}
+
+/* =========================================================
+   CENTER TITLE AREA
+========================================================= */
+
+.player-page-new-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    70px
+    120px
+    155px;
+
+  box-sizing: border-box;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MODE TITLE
+========================================================= */
+
+.player-page-new-title {
+  margin: 0;
+
+  width: min(900px, 90vw);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  text-align: center;
+
+  font-family:
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    sans-serif;
+
+  font-size:
+    clamp(52px, 7vw, 110px);
+
+  font-weight: 600;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 8px 38px
+    rgba(0, 0, 0, 0.78);
+}
+
+.player-page-new-title-line {
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+/* =========================================================
+   PLAYER CONTROLS — BOTTOM
+========================================================= */
+
+.player-page-new-controls {
+  position: absolute;
+
+  left: 50%;
+  bottom: 28px;
+
+  z-index: 50;
+
+  width:
+    min(620px, calc(100vw - 48px));
+
+  transform:
+    translateX(-50%);
+}
+
+/* =========================================================
+   PLAYER STACK
+========================================================= */
+
+.player-page-new-controls
+.player-controls-stack {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   LISTENING INDICATOR
+========================================================= */
+
+.player-page-new-controls
+.player-listening-indicator {
+  position: relative !important;
+
+  inset: auto !important;
+
+  order: 1;
+
+  width: fit-content;
+
+  margin: 0 !important;
+
+  transform: none !important;
+
+  align-self: center;
+}
+
+/* =========================================================
+   PLAYER BAR
+========================================================= */
+
+.player-page-new-controls
+.player-bar {
+  order: 2;
+
+  width: 100%;
+
+  min-height: 64px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background:
+    rgba(10, 11, 11, 0.68);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  backdrop-filter:
+    blur(22px);
+
+  box-shadow:
+    0 18px 55px
+    rgba(0, 0, 0, 0.32);
+}
+
+/* =========================================================
+   YOUTUBE PLAYER HIDDEN
+========================================================= */
+
+.raahi-youtube-player {
+  position: fixed;
+
+  width: 1px;
+  height: 1px;
+
+  left: -9999px;
+  top: -9999px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.raahi-youtube-player iframe {
+  width: 1px !important;
+  height: 1px !important;
+
+  border: 0;
+}
+
+/* =========================================================
+   MOBILE PLAYER
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .player-page-new-content {
+    align-items: center;
+
+    padding:
+      80px
+      20px
+      160px;
+  }
+
+  .player-page-new-title {
+    width: 100%;
+
+    font-size:
+      clamp(42px, 12vw, 72px);
+
+    line-height: 1.08;
+  }
+
+  .player-page-new-controls {
+    bottom: 16px;
+
+    width:
+      calc(100vw - 24px);
+  }
+
+  .player-page-new-controls
+  .player-bar {
+    min-height: 60px;
+
+    border-radius: 17px;
+  }
+}
+
+/* =========================================================
+   FINAL HOME PAGE
+========================================================= */
+
+.raahi-home-new {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow: hidden;
+
+  background: #101211;
+}
+
+.raahi-home-background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("/images/modes/raat-ki-shift.webp")
+    center / cover no-repeat;
+
+  transform: scale(1.02);
+}
+
+.raahi-home-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.32),
+      rgba(0, 0, 0, 0.04) 50%,
+      rgba(0, 0, 0, 0.32)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.5)
+    );
+}
+
+.raahi-home-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 40px 55px;
+
+  box-sizing: border-box;
+}
+
+/* ENTER MODES BUTTON */
+
+.raahi-enter-modes {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 16px 18px 16px 24px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.22);
+
+  border-radius: 16px;
+
+  background:
+    rgba(12, 14, 13, 0.48);
+
+  backdrop-filter:
+    blur(16px);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family:
+    "Poppins",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+.raahi-enter-modes:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    rgba(12, 14, 13, 0.68);
+
+  border-color:
+    rgba(255, 255, 255, 0.42);
+}
+
+.raahi-enter-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  font-size: 21px;
+
+  transition:
+    transform 220ms ease;
+}
+
+.raahi-enter-modes:hover
+.raahi-enter-arrow {
+  transform:
+    translateX(4px);
+}
+
+/* =========================================================
+   FINAL ABOUT PAGE
+========================================================= */
+
+/* HERO */
+
+.about-eyebrow {
+  margin:
+    0
+    0
+    24px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+.about-intro {
+  width:
+    min(620px, 100%);
+
+  margin:
+    28px
+    0
+    0;
+
+  font-size:
+    clamp(16px, 1.5vw, 21px);
+
+  line-height: 1.7;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+}
+
+/* STORY */
+
+/* MODES PREVIEW */
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .raahi-home-content {
+    padding:
+      25px
+      20px;
+  }
+
+  .raahi-enter-modes {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  
+/* =========================================================
+   RAAHI SIDEBAR
+========================================================= */
+
+
+/* MENU BUTTON */
+
+.raahi-menu-button {
+  position: fixed !important;
+
+  top: 28px !important;
+  left: 28px !important;
+
+  right: auto !important;
+  bottom: auto !important;
+
+  z-index: 5000 !important;
+
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 16px;
+
+  background:
+    rgba(10, 12, 14, 0.68);
+
+  color: #ffffff;
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.28);
+
+  cursor: pointer;
+
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+
+.raahi-menu-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 0.24);
+}
+
+
+.raahi-menu-button span {
+  display: block;
+
+  width: 24px;
+  height: 1.5px;
+
+  background:
+    currentColor;
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.raahi-sidebar-overlay {
+  position: fixed !important;
+
+  inset: 0 !important;
+
+  z-index: 6000 !important;
+
+  width: 100vw;
+  height: 100svh;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+
+  background:
+    rgba(0, 0, 0, 0.48);
+
+  backdrop-filter:
+    blur(5px);
+
+  -webkit-backdrop-filter:
+    blur(5px);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SIDEBAR CONTAINER
+========================================================= */
+
+.raahi-sidebar {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  right: auto !important;
+  bottom: auto !important;
+
+  z-index: 7000 !important;
+
+  width:
+    min(445px, 92vw) !important;
+
+  height:
+    100svh !important;
+
+  margin: 0 !important;
+
+  padding:
+    68px
+    68px
+    64px !important;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  color: #e8e5de;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 20, 22, 0.99),
+      rgba(10, 12, 14, 0.99)
+    );
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius:
+    0
+    0
+    18px
+    0;
+
+  box-shadow:
+    28px 0 70px
+    rgba(0, 0, 0, 0.28);
+
+  transform:
+    translateX(-105%) !important;
+
+  pointer-events: none;
+
+  transition:
+    transform 420ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.raahi-sidebar-open {
+  transform:
+    translateX(0) !important;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.raahi-sidebar-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 76px;
+}
+
+
+.raahi-sidebar-logo {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(28px, 2.2vw, 36px);
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  color:
+    #e8e5de;
+}
+
+
+/* CLOSE BUTTON */
+
+.raahi-sidebar-close {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  color:
+    #e8e5de;
+
+  font-size: 32px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+
+.raahi-sidebar-close:hover {
+  transform:
+    rotate(4deg);
+
+  background:
+    rgba(255, 255, 255, 0.1);
+
+  border-color:
+    rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.raahi-sidebar-nav {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.raahi-sidebar-item {
+  width: 100%;
+}
+
+
+/* NAV ITEM */
+
+.raahi-sidebar-link {
+  width: 100%;
+
+  min-height: 74px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding:
+    0
+    0
+    0
+    0;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 0;
+
+  outline: none;
+
+  background:
+    transparent;
+
+  color:
+    rgba(225, 222, 214, 0.72);
+
+  font-family:
+    "Poppins",
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.06em;
+
+  text-align: left;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    color 220ms ease,
+    padding-left 220ms ease,
+    border-color 220ms ease;
+}
+
+
+.raahi-sidebar-link:hover {
+  padding-left: 6px;
+
+  color:
+    #f3f0e9;
+
+  border-color:
+    rgba(255, 255, 255, 0.18);
+}
+
+
+.raahi-sidebar-button {
+  font: inherit;
+}
+
+
+/* RIGHT SIDE NUMBERS */
+
+.raahi-sidebar-number,
+.raahi-sidebar-external,
+.raahi-sidebar-small-arrow {
+  flex-shrink: 0;
+
+  color:
+    rgba(218, 210, 192, 0.62);
+
+  font-family:
+    "Poppins",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    transform 220ms ease,
+    color 220ms ease;
+}
+
+
+.raahi-sidebar-link:hover
+.raahi-sidebar-number,
+.raahi-sidebar-link:hover
+.raahi-sidebar-external,
+.raahi-sidebar-link:hover
+.raahi-sidebar-small-arrow {
+  color:
+    #e8e3d8;
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   LINKEDIN
+========================================================= */
+
+.raahi-linkedin-toggle {
+  font: inherit;
+}
+
+
+.raahi-sidebar-small-arrow {
+  font-size: 16px;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+}
+
+
+.raahi-arrow-open {
+  transform:
+    rotate(45deg);
+}
+
+
+/* LINKEDIN OPTIONS */
+
+.raahi-linkedin-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding:
+    10px
+    0
+    12px
+    18px;
+}
+
+
+.raahi-linkedin-options a {
+  width: fit-content;
+
+  padding:
+    8px
+    0;
+
+  color:
+    rgba(225, 222, 214, 0.5);
+
+  font-family:
+    "Poppins",
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.raahi-linkedin-options a:hover {
+  transform:
+    translateX(4px);
+
+  color:
+    #f2eee6;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.raahi-sidebar-footer {
+  width: 100%;
+
+  margin-top: auto;
+
+  padding-top: 42px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color:
+    rgba(225, 222, 214, 0.42);
+
+  font-family:
+    "Poppins",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .raahi-menu-button {
+    top: 16px !important;
+
+    left: 16px !important;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+  }
+
+
+  .raahi-menu-button span {
+    width: 21px;
+  }
+
+
+  .raahi-sidebar {
+    width:
+      min(390px, 92vw) !important;
+
+    padding:
+      42px
+      32px
+      36px !important;
+  }
+
+
+  .raahi-sidebar-header {
+    margin-bottom: 52px;
+  }
+
+
+  .raahi-sidebar-logo {
+    font-size: 27px;
+  }
+
+
+  .raahi-sidebar-close {
+    width: 48px;
+    height: 48px;
+
+    font-size: 28px;
+
+    border-radius: 15px;
+  }
+
+
+  .raahi-sidebar-nav {
+    gap: 12px;
+  }
+
+
+  .raahi-sidebar-link {
+    min-height: 64px;
+
+    font-size: 12px;
+  }
+
+
+  .raahi-sidebar-footer {
+    padding-top: 30px;
+
+    font-size: 12px;
+  }
+ }
+}
+
+/* =========================================================
+   RAAHI — FINAL SAFE UI FIXES
+========================================================= */
+
+/* =========================================================
+   HOMEPAGE MODES BUTTON
+========================================================= */
+
+.raahi-enter-modes {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.raahi-enter-arrow {
+  width: auto !important;
+  height: auto !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  transition:
+    transform 220ms ease;
+}
+
+.raahi-enter-modes:hover
+.raahi-enter-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MODES PAGE
+========================================================= */
+
+.modes-page-label,
+.modes-page-description {
+  display: none !important;
+}
+
+.modes-page-heading {
+  display: flex;
+  align-items: center;
+}
+
+.modes-page-heading h1 {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MODES SLIDER
+========================================================= */
+
+.modes-slider {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.modes-scroll-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+
+  padding:
+    12px
+    54px
+    24px;
+}
+
+.modes-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================================
+   EQUAL MODE CARD SIZE
+========================================================= */
+
+.modes-grid-new {
+  width: max-content;
+
+  display: grid;
+
+  grid-auto-flow: column;
+
+  grid-auto-columns: 300px;
+
+  grid-template-rows: 1fr;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding-right: 18px;
+}
+
+.mode-card-new {
+  width: 300px !important;
+
+  height: 490px !important;
+
+  min-height: 490px !important;
+
+  flex: none;
+}
+
+
+/* =========================================================
+   MODE SLIDER BUTTONS
+========================================================= */
+
+.modes-slider-button {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    rgba(15, 16, 16, 0.72);
+
+  backdrop-filter:
+    blur(14px);
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 28px
+    rgba(0, 0, 0, 0.3);
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.modes-slider-button:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border-color:
+    rgba(255, 255, 255, 0.55);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.modes-previous-button {
+  left: 6px;
+}
+
+.modes-next-button {
+  right: 6px;
+}
+
+
+/* =========================================================
+   PLAYER WIDTH — COMPACT
+========================================================= */
+
+.player-page-new-controls {
+  width:
+    min(540px, calc(100vw - 48px)) !important;
+}
+
+.player-page-new-controls
+.player-controls-stack {
+  width: 100%;
+}
+
+.player-page-new-controls
+.player-bar {
+  width: 100% !important;
+
+  min-height: 64px;
+}
+
+
+/* =========================================================
+   PLAYER BUTTONS
+========================================================= */
+
+.player-control {
+  cursor: pointer !important;
+}
+
+.player-play {
+  cursor: pointer !important;
+}
+
+.player-play:disabled {
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+  .modes-grid-new {
+    grid-auto-columns: 260px;
+  }
+
+  .mode-card-new {
+    width: 260px !important;
+
+    height: 430px !important;
+
+    min-height: 430px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .modes-scroll-wrapper {
+    padding:
+      10px
+      48px
+      20px;
+  }
+
+  .modes-grid-new {
+    grid-auto-columns: 220px;
+
+    gap: 14px;
+  }
+
+  .mode-card-new {
+    width: 220px !important;
+
+    height: 360px !important;
+
+    min-height: 360px !important;
+  }
+
+  .modes-slider-button {
+    width: 34px;
+    height: 34px;
+
+    font-size: 21px;
+  }
+
+  .player-page-new-controls {
+    width:
+      min(500px, calc(100vw - 24px)) !important;
+  }
+}
+/* =========================================================
+   PLAYER — FINAL COMPACT / TRANSPARENT CONTROLS
+   Keep this block at the end so it overrides older player rules.
+========================================================= */
+
+.player-page-new-controls {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 28px !important;
+  z-index: 60 !important;
+  width: min(500px, calc(100vw - 40px)) !important;
+  transform: translateX(-50%) !important;
+}
+
+.player-page-new-controls .player-controls-stack {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Listening indicator sits above the controls */
+.player-page-new-controls .player-listening-indicator {
+  position: static !important;
+  order: 1 !important;
+  margin: 0 !important;
+  transform: none !important;
+  width: fit-content !important;
+  padding: 5px 11px !important;
+  border: 1px solid rgba(238, 233, 223, 0.13) !important;
+  border-radius: 999px !important;
+  background: rgba(10, 11, 10, 0.38) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  color: rgba(238, 233, 223, 0.82) !important;
+  font-size: 9px !important;
+  letter-spacing: 0.04em !important;
+  box-shadow: none !important;
+}
+
+.player-page-new-controls .player-listening-indicator:hover {
+  transform: none !important;
+  background: rgba(10, 11, 10, 0.48) !important;
+}
+
+.player-page-new-controls .listening-dot {
+  width: 6px !important;
+  height: 6px !important;
+  background: #65c466 !important;
+  box-shadow: 0 0 9px rgba(101, 196, 102, 0.55) !important;
+}
+
+/* Transparent player: NO black/glass background */
+.player-page-new-controls .player-bar {
+  position: relative !important;
+  order: 2 !important;
+  width: 100% !important;
+  min-height: 58px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 6px 7px 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.player-page-new-controls .player-bar:hover {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.player-page-new-controls .song-artwork {
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.28) !important;
+}
+
+.player-page-new-controls .song-info {
+  min-width: 0 !important;
+  max-width: 160px !important;
+  margin-left: 9px !important;
+}
+
+.player-page-new-controls .song-info strong {
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.player-page-new-controls .song-info span {
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 9px !important;
+}
+
+/* Compact icon group */
+.player-page-new-controls .player-controls {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  margin-left: auto !important;
+}
+
+.player-page-new-controls .player-control {
+  width: 32px !important;
+  height: 32px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+}
+
+.player-page-new-controls .player-control:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #ffffff !important;
+  transform: scale(1.06) !important;
+}
+
+.player-page-new-controls .player-control svg {
+  width: 17px !important;
+  height: 17px !important;
+  display: block !important;
+}
+
+/* Main play button */
+.player-page-new-controls .player-control.player-play {
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 2px !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  background: rgba(238, 233, 223, 0.94) !important;
+  color: #151615 !important;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.24) !important;
+}
+
+.player-page-new-controls .player-control.player-play:hover {
+  background: #ffffff !important;
+  color: #111111 !important;
+  transform: scale(1.07) !important;
+}
+
+.player-page-new-controls .player-control.player-play svg {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+/* Existing div progress bar is no longer used by PlayerControls;
+   keep it harmless in case an older render remains cached. */
+.player-page-new-controls .player-progress {
+  display: none !important;
+}
+
+/* New range progress control */
+.player-page-new-controls .player-progress-range {
+  position: absolute !important;
+  left: 7px !important;
+  right: 7px !important;
+  bottom: 0 !important;
+  width: calc(100% - 14px) !important;
+  height: 12px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+.player-page-new-controls .player-progress-range::-webkit-slider-runnable-track {
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(
+    to right,
+    rgba(238, 233, 223, 0.9) var(--player-progress, 0%),
+    rgba(238, 233, 223, 0.18) var(--player-progress, 0%)
+  ) !important;
+}
+
+.player-page-new-controls .player-progress-range::-webkit-slider-thumb {
+  width: 7px !important;
+  height: 7px !important;
+  margin-top: -2.5px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #eee9df !important;
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.3) !important;
+}
+
+.player-page-new-controls .player-progress-range::-moz-range-track {
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: rgba(238, 233, 223, 0.18) !important;
+}
+
+.player-page-new-controls .player-progress-range::-moz-range-progress {
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: rgba(238, 233, 223, 0.9) !important;
+}
+
+.player-page-new-controls .player-progress-range::-moz-range-thumb {
+  width: 7px !important;
+  height: 7px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #eee9df !important;
+}
+
+@media (max-width: 650px) {
+  .player-page-new-controls {
+    width: calc(100vw - 28px) !important;
+    bottom: 17px !important;
+  }
+
+  .player-page-new-controls .song-artwork {
+    width: 40px !important;
+    height: 40px !important;
+    flex-basis: 40px !important;
+  }
+
+  .player-page-new-controls .song-info {
+    max-width: 110px !important;
+    margin-left: 8px !important;
+  }
+
+  .player-page-new-controls .song-info strong {
+    font-size: 10px !important;
+  }
+
+  .player-page-new-controls .song-info span {
+    font-size: 8px !important;
+  }
+
+  .player-page-new-controls .player-control {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .player-page-new-controls .player-control.player-play {
+    width: 39px !important;
+    height: 39px !important;
+  }
+}
+
+
+/* =========================================================
+   RAAHI — FINAL MODES CAROUSEL
+   Right-side vertical semi-circle.
+   Active card protrudes toward screen center.
+   ========================================================= */
+
+.modes-page-new {
+  position: relative !important;
+  width: 100% !important;
+  height: 100svh !important;
+  min-height: 100svh !important;
+  overflow: hidden !important;
+  background: #080909 !important;
+  color: #fff !important;
+}
+
+.modes-experience {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.modes-intro {
+  position: absolute !important;
+  left: clamp(72px, 8vw, 140px) !important;
+  top: 0 !important;
+  width: 35% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 5 !important;
+}
+
+.modes-main-title {
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: clamp(42px, 5vw, 76px) !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  color: #fff !important;
+}
+
+.modes-carousel-section {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.curved-modes-carousel {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none !important;
+  overflow: hidden !important;
+}
+
+/* The vertical semi-circle on the right */
+.curved-modes-orbit {
+  position: absolute !important;
+  top: 50% !important;
+  right: -17vw !important;
+  width: 58vw !important;
+  height: 118vh !important;
+  transform: translateY(-50%) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+/* The three visible positions */
+.curved-modes-track {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+}
+
+.curved-mode-item {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: min(31vw, 520px) !important;
+  pointer-events: none !important;
+  transition:
+    transform .65s cubic-bezier(.22,.8,.24,1),
+    opacity .45s ease,
+    filter .45s ease !important;
+}
+
+.curved-mode-item .mode-card-new {
+  pointer-events: auto !important;
+}
+
+/* Center card: horizontally elongated and pulled out from the arc */
+.curved-mode-active {
+  z-index: 10 !important;
+  transform: translate(-7%, -50%) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Above */
+.curved-mode-previous {
+  z-index: 4 !important;
+  transform: translate(32%, -158%) scale(.78) !important;
+  opacity: .62 !important;
+  filter: saturate(.72) brightness(.72) !important;
+}
+
+/* Below */
+.curved-mode-next {
+  z-index: 4 !important;
+  transform: translate(32%, 58%) scale(.78) !important;
+  opacity: .62 !important;
+  filter: saturate(.72) brightness(.72) !important;
+}
+
+.curved-mode-hidden {
+  opacity: 0 !important;
+  transform: translate(50%, -50%) scale(.65) !important;
+  pointer-events: none !important;
+}
+
+/* Horizontal card shape */
+.curved-modes-carousel .mode-card-new {
+  width: 100% !important;
+  height: clamp(155px, 20vh, 205px) !important;
+  min-height: 155px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  background: rgba(8,8,8,.22) !important;
+  box-shadow: none !important;
+  transform: none !important;
+  overflow: hidden !important;
+}
+
+.curved-modes-carousel .curved-mode-active .mode-card-new {
+  border-color: rgba(238,233,223,.78) !important;
+  box-shadow:
+    0 0 0 1px rgba(238,233,223,.08),
+    0 18px 55px rgba(0,0,0,.36) !important;
+}
+
+.curved-modes-carousel .mode-card-new-image {
+  object-fit: cover !important;
+  object-position: center !important;
+  opacity: .92 !important;
+}
+
+.curved-modes-carousel .mode-card-new-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.22),
+      rgba(0,0,0,.04) 48%,
+      rgba(0,0,0,.54)
+    ) !important;
+}
+
+.curved-modes-carousel .mode-card-new-content {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px 42px !important;
+  box-sizing: border-box !important;
+}
+
+.curved-modes-carousel .mode-card-new-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 82% !important;
+  text-align: center !important;
+  text-wrap: balance !important;
+  font-family: "Noto Sans Devanagari", "Poppins", sans-serif !important;
+  font-size: clamp(21px, 2.15vw, 34px) !important;
+  line-height: 1.14 !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  text-shadow: 0 3px 18px rgba(0,0,0,.9) !important;
+}
+
+/* Keep names clean: no number / arrow on cards */
+.curved-modes-carousel .mode-card-new-number,
+.curved-modes-carousel .mode-card-new-arrow {
+  display: none !important;
+}
+
+/* Arrows sit on the arc */
+.curved-mode-arrow {
+  position: absolute !important;
+  right: clamp(90px, 13vw, 220px) !important;
+  z-index: 20 !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.78) !important;
+  font-size: 28px !important;
+  font-weight: 300 !important;
+  cursor: pointer !important;
+  transition: transform .2s ease, color .2s ease !important;
+}
+
+.curved-mode-arrow:hover {
+  color: #fff !important;
+  transform: scale(1.12) !important;
+}
+
+.curved-mode-arrow-previous {
+  top: 7% !important;
+}
+
+.curved-mode-arrow-next {
+  bottom: 13% !important;
+}
+
+/* Bottom dotted curved selector */
+.modes-carousel-controls {
+  position: absolute !important;
+  right: clamp(70px, 10vw, 170px) !important;
+  bottom: 5.5% !important;
+  width: min(360px, 27vw) !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  z-index: 30 !important;
+}
+
+.modes-carousel-count {
+  display: none !important;
+}
+
+.modes-range-slider {
+  width: 100% !important;
+  height: 38px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,.42) 0 4px,
+      transparent 4.5px
+    ) 0 50% / 18% 100% repeat-x !important;
+  border: 0 !important;
+  outline: none !important;
+  cursor: ew-resize !important;
+}
+
+/* Hide the straight slider track */
+.modes-range-slider::-webkit-slider-runnable-track {
+  height: 38px !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.modes-range-slider::-moz-range-track {
+  height: 38px !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+/* Active draggable dot */
+.modes-range-slider::-webkit-slider-thumb {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 13px !important;
+  height: 13px !important;
+  margin-top: 12px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #eee9df !important;
+  box-shadow: 0 0 16px rgba(238,233,223,.65) !important;
+}
+
+.modes-range-slider::-moz-range-thumb {
+  width: 13px !important;
+  height: 13px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #eee9df !important;
+  box-shadow: 0 0 16px rgba(238,233,223,.65) !important;
+}
+
+/* Mobile/tablet */
+@media (max-width: 900px) {
+  .modes-intro {
+    left: 28px !important;
+    top: 78px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .modes-main-title {
+    font-size: 38px !important;
+  }
+
+  .curved-modes-orbit {
+    right: -42vw !important;
+    width: 105vw !important;
+    height: 120vh !important;
+  }
+
+  .curved-mode-item {
+    left: 42% !important;
+    width: min(76vw, 500px) !important;
+  }
+
+  .curved-mode-active {
+    transform: translate(-8%, -50%) !important;
+  }
+
+  .curved-mode-previous {
+    transform: translate(18%, -154%) scale(.72) !important;
+  }
+
+  .curved-mode-next {
+    transform: translate(18%, 54%) scale(.72) !important;
+  }
+
+  .curved-modes-carousel .mode-card-new {
+    height: 145px !important;
+  }
+
+  .modes-carousel-controls {
+    right: 12vw !important;
+    bottom: 5% !important;
+    width: 55vw !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .modes-intro {
+    left: 22px !important;
+    top: 72px !important;
+  }
+
+  .modes-main-title {
+    font-size: 34px !important;
+  }
+
+  .curved-modes-orbit {
+    right: -58vw !important;
+    width: 132vw !important;
+  }
+
+  .curved-mode-item {
+    left: 32% !important;
+    width: 78vw !important;
+  }
+
+  .curved-mode-previous {
+    transform: translate(8%, -150%) scale(.66) !important;
+  }
+
+  .curved-mode-next {
+    transform: translate(8%, 50%) scale(.66) !important;
+  }
+
+  .curved-modes-carousel .mode-card-new {
+    height: 126px !important;
+  }
+
+  .curved-modes-carousel .mode-card-new-title {
+    max-width: 78% !important;
+    font-size: 20px !important;
+  }
+
+  .curved-mode-arrow {
+    right: 8vw !important;
+  }
+
+  .modes-carousel-controls {
+    right: 10vw !important;
+    width: 66vw !important;
+  }
+}
+
+
+/* =========================================================
+   PLAYER — ICON ONLY CONTROLS
+   No playback background box. Listening indicator above.
+   ========================================================= */
+
+.player-page-new-controls {
+  width: min(500px, calc(100vw - 40px)) !important;
+}
+
+.player-page-new-controls .player-controls-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.player-page-new-controls .player-listening-indicator {
+  order: 1 !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: rgba(255,255,255,.84) !important;
+  font-size: 12px !important;
+}
+
+.player-page-new-controls .player-bar {
+  order: 2 !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 4px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.player-page-new-controls .player-control {
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.9) !important;
+  box-shadow: none !important;
+}
+
+.player-page-new-controls .player-control:hover {
+  background: transparent !important;
+  color: #fff !important;
+  transform: scale(1.08) !important;
+}
+
+.player-page-new-controls .player-control svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.player-page-new-controls .player-control.player-play {
+  width: 40px !important;
+  height: 40px !important;
+  margin: 0 8px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.player-page-new-controls .player-control.player-play:hover {
+  background: transparent !important;
+  color: #fff !important;
+  transform: scale(1.08) !important;
+}
+
+.player-page-new-controls .song-artwork {
+  width: 38px !important;
+  height: 38px !important;
+  flex-basis: 38px !important;
+}
+
+.player-page-new-controls .song-info {
+  max-width: 140px !important;
+}
+
+@media (max-width: 650px) {
+  .player-page-new-controls {
+    width: calc(100vw - 28px) !important;
+  }
+
+  .player-page-new-controls .player-control {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .player-page-new-controls .player-control.player-play {
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 6px !important;
+  }
+}
+
+/* =========================================================
+   MODES — TITLE LINES
+   ========================================================= */
+
+.curved-modes-carousel .mode-card-new-title-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+.curved-modes-carousel .mode-card-new-title-line + .mode-card-new-title-line {
+  margin-top: 1px !important;
 }

@@ -1,79 +1,110 @@
 import Link from "next/link";
 import RaahiSidebar from "@/components/navigation/RaahiSidebar";
 
+const modeImages = [
+  {
+    name: "हरियाणा रोडवेज़",
+    image: "/images/modes/bus-wala.webp",
+  },
+  {
+    name: "चाय की टपरी",
+    image: "/images/modes/chai-tapri.webp",
+  },
+  {
+    name: "नाइट शिफ्ट",
+    image: "/images/modes/raat-ki-shift.webp",
+  },
+];
+
 export default function AboutPage() {
   return (
-    <main className="info-page about-page">
+    <main className="about-page-new">
       <RaahiSidebar />
 
-      <header className="info-header">
-        <Link href="/" className="info-home-link">
-          ← Home
-        </Link>
-      </header>
-
-      <section className="info-hero">
-        <p className="section-label">ABOUT RAAHI</p>
-
-        <h1>
-          Music for the
-          <br />
-          <em>journey.</em>
-        </h1>
-      </section>
-
-      <section className="info-content">
-        <div className="info-content-main">
-          <p className="info-lead">
-            RAAHI is a collection of musical worlds inspired by the people,
-            places and everyday journeys around us.
+      <div className="about-page-container">
+        <section className="about-hero-new">
+          <p className="about-eyebrow">
+            ABOUT
           </p>
 
-          <div className="info-copy">
-            <p>
-              A journey is never just about reaching somewhere. There is the
-              road outside the window, the people around you, the work waiting
-              at the other end, and the music playing somewhere in between.
-            </p>
+          <h1>
+            राही
+          </h1>
 
-            <p>
-              RAAHI turns those familiar moments into different worlds. A bus
-              ride home. Chai at a roadside tapri. A late-night shift. A quiet
-              workshop. Every place has its own rhythm.
-            </p>
+          <p className="about-intro">
+            RAAHI is a collection of musical worlds inspired by
+            everyday people, places and journeys.
+          </p>
+        </section>
 
-            <p>
-              Choose the world that feels closest to where you are, press play,
-              and let the journey continue.
-            </p>
-          </div>
-        </div>
-
-        <div className="about-details">
-          <div className="about-detail">
+        <section className="about-story-new">
+          <div className="about-story-heading">
             <span>01</span>
-            <p>Different people</p>
+
+            <h2>
+              Every journey
+              <br />
+              has its own sound.
+            </h2>
           </div>
 
-          <div className="about-detail">
+          <div className="about-story-copy">
+            <p>
+              A journey is never only about reaching somewhere.
+              There is the road outside the window, the people
+              around you, the work waiting at the other end,
+              and the music playing somewhere in between.
+            </p>
+
+            <p>
+              RAAHI turns these familiar moments into different
+              musical worlds. A bus ride, chai at a roadside tapri,
+              a late-night shift or a quiet workshop — every place
+              has its own rhythm.
+            </p>
+
+            <Link
+              href="/modes"
+              className="about-modes-link"
+            >
+              Explore modes →
+            </Link>
+          </div>
+        </section>
+
+        <section className="about-modes-preview">
+          <div className="about-preview-header">
             <span>02</span>
-            <p>Different roads</p>
+
+            <h2>
+              Different worlds.
+              <br />
+              Different moods.
+            </h2>
           </div>
 
-          <div className="about-detail">
-            <span>03</span>
-            <p>Different sounds</p>
+          <div className="about-preview-grid">
+            {modeImages.map((mode) => (
+              <Link
+                href="/modes"
+                className="about-preview-card"
+                key={mode.name}
+              >
+                <img
+                  src={mode.image}
+                  alt={mode.name}
+                />
+
+                <div className="about-preview-overlay" />
+
+                <span>
+                  {mode.name}
+                </span>
+              </Link>
+            ))}
           </div>
-        </div>
-      </section>
-
-      <footer className="info-footer">
-        <span>RAAHI</span>
-
-        <Link href="/modes" className="info-footer-link">
-          Explore modes →
-        </Link>
-      </footer>
+        </section>
+      </div>
     </main>
   );
 }

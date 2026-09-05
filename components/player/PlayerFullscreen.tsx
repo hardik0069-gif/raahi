@@ -9,21 +9,30 @@ type PlayerFullscreenProps = {
 export default function PlayerFullscreen({
   children,
 }: PlayerFullscreenProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const containerRef =
+    useRef<HTMLDivElement | null>(null);
+
+  const [isFullscreen, setIsFullscreen] =
+    useState(false);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(
-        document.fullscreenElement === containerRef.current
+        document.fullscreenElement ===
+          containerRef.current
       );
     };
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        if (document.fullscreenElement) {
-          document.exitFullscreen().catch(() => {});
-        }
+    const handleKeyDown = (
+      event: KeyboardEvent
+    ) => {
+      if (
+        event.key === "Escape" &&
+        document.fullscreenElement
+      ) {
+        document
+          .exitFullscreen()
+          .catch(() => {});
       }
     };
 
@@ -50,27 +59,6 @@ export default function PlayerFullscreen({
     };
   }, []);
 
-  const enterFullscreen = async () => {
-    const element = containerRef.current;
-
-    if (!element) {
-      return;
-    }
-
-    if (document.fullscreenElement === element) {
-      return;
-    }
-
-    try {
-      await element.requestFullscreen();
-    } catch (error) {
-      console.error(
-        "Could not enter fullscreen:",
-        error
-      );
-    }
-  };
-
   return (
     <div
       ref={containerRef}
@@ -79,7 +67,6 @@ export default function PlayerFullscreen({
           ? "player-fullscreen-active"
           : ""
       }`}
-      onClick={enterFullscreen}
     >
       {children}
     </div>

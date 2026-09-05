@@ -29,41 +29,50 @@ export default function ListeningIndicator({
       > | null
     >(null);
 
+  const isSubscribedRef = useRef(false);
+
+  const isPlayingRef = useRef(isPlaying);
+
   useEffect(() => {
-    const supabase =
-      createClient();
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
 
-    const channel =
-      supabase.channel(
-        `listening:${modeId}`,
-        {
-          config: {
-            presence: {
-              key: crypto.randomUUID(),
-            },
+  useEffect(() => {
+    const supabase = createClient();
+
+    const presenceKey =
+      typeof crypto !== "undefined" &&
+      crypto.randomUUID
+        ? crypto.randomUUID()
+        : `listener-${Date.now()}-${Math.random()}`;
+
+    const channel = supabase.channel(
+      `listening:${modeId}`,
+      {
+        config: {
+          presence: {
+            key: presenceKey,
           },
-        }
+        },
+      }
+    );
+
+    channelRef.current = channel;
+
+    const updateListenerCount = () => {
+      const state = channel.presenceState();
+
+      setListenerCount(
+        Object.keys(state).length
       );
-
-    channelRef.current =
-      channel;
-
-    const updateCount =
-      () => {
-        const state =
-          channel.presenceState();
-
-        setListenerCount(
-          Object.keys(state).length
-        );
-      };
+    };
 
     channel.on(
       "presence",
       {
         event: "sync",
       },
-      updateCount
+      updateListenerCount
     );
 
     channel.on(
@@ -71,7 +80,7 @@ export default function ListeningIndicator({
       {
         event: "join",
       },
-      updateCount
+      updateListenerCount
     );
 
     channel.on(
@@ -79,68 +88,94 @@ export default function ListeningIndicator({
       {
         event: "leave",
       },
-      updateCount
+      updateListenerCount
     );
 
-    channel.subscribe(
-      (status) => {
-        if (
-          status ===
-          "SUBSCRIBED"
-        ) {
-          updateCount();
-        }
+    channel.subscribe(async (status) => {
+      if (status !== "SUBSCRIBED") {
+        return;
       }
-    );
+
+      isSubscribedRef.current = true;
+
+      if (isPlayingRef.current) {
+        await channel.track({
+          mode_id: modeId,
+          listening: true,
+          started_at:
+            new Date().toISOString(),
+        });
+      }
+
+      updateListenerCount();
+    });
 
     return () => {
+      isSubscribedRef.current = false;
+
       channel.untrack();
 
-      supabase.removeChannel(
-        channel
-      );
+      supabase.removeChannel(channel);
 
-      channelRef.current =
-        null;
+      channelRef.current = null;
     };
   }, [modeId]);
 
   useEffect(() => {
-    const channel =
-      channelRef.current;
+    const channel = channelRef.current;
 
-    if (!channel) {
+    if (!channel || !isSubscribedRef.current) {
       return;
     }
 
-    if (isPlaying) {
-      channel.track({
-        mode_id: modeId,
-        listening: true,
-        started_at:
-          new Date().toISOString(),
-      });
-    } else {
-      channel.untrack();
-    }
-  }, [
-    isPlaying,
-    modeId,
-  ]);
+    const updatePresence = async () => {
+      if (isPlaying) {
+        await channel.track({
+          mode_id: modeId,
+          listening: true,
+          started_at:
+            new Date().toISOString(),
+        });
+      } else {
+        await channel.untrack();
+      }
+    };
 
-  if (
-    !isPlaying ||
-    listenerCount === 0
-  ) {
+    updatePresence();
+  }, [isPlaying, modeId]);
+
+  /*
+   * Indicator sirf playback ke time show hoga.
+   * Supabase count late aaye tab bhi kam se kam
+   * current user ko 1 listener dikhayega.
+   */
+  if (!isPlaying) {
     return null;
   }
 
-  return (
-    <div className="listening-indicator player-listening-indicator">
-      <span className="listening-dot" />
+  const displayCount = Math.max(
+    1,
+    listenerCount
+  );
 
-      <span>
-        {listenerCount} listening
+  return (
+    <div
+      className="
+        listening-indicator
+        player-listening-indicator
+      "
+      role="status"
+      aria-live="polite"
+    >
+      <span
+        className="listening-dot"
+        aria-hidden="true"
+      />
+
+      <span className="listening-indicator-text">
+        {displayCount === 1
+          ? "1 listening"
+          : `${displayCount} listening`}
       </span>
     </div>
   );

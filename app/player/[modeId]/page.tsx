@@ -20,6 +20,10 @@ function getTitleLines(title: string) {
     return [title];
   }
 
+  if (words.length === 2) {
+    return words;
+  }
+
   const middle = Math.ceil(words.length / 2);
 
   return [
@@ -41,11 +45,9 @@ export default async function PlayerPage({
 
   const songs = await getModeSongs(modeId);
 
-  const backgroundImage = `/images/modes/${mode.id}.webp`;
+  const title = mode.hindiName || mode.name;
 
-  const titleLines = getTitleLines(
-    mode.hindiName || mode.name
-  );
+  const titleLines = getTitleLines(title);
 
   return (
     <PlayerFullscreen>
@@ -53,7 +55,7 @@ export default async function PlayerPage({
         <div
           className="player-page-new-background"
           style={{
-            backgroundImage: `url("${backgroundImage}")`,
+            backgroundImage: `url("${mode.image}")`,
           }}
         />
 
@@ -62,13 +64,16 @@ export default async function PlayerPage({
         <RaahiSidebar />
 
         <section className="player-page-new-content">
-          <div className="player-page-new-title">
+          <h1 className="player-page-new-title">
             {titleLines.map((line, index) => (
-              <span key={`${line}-${index}`}>
+              <span
+                key={`${line}-${index}`}
+                className="player-page-new-title-line"
+              >
                 {line}
               </span>
             ))}
-          </div>
+          </h1>
         </section>
 
         <div className="player-page-new-controls">
