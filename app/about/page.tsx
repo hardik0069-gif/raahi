@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import RaahiSidebar from "@/components/navigation/RaahiSidebar";
 
@@ -5,14 +6,32 @@ const modeImages = [
   {
     name: "हरियाणा रोडवेज़",
     image: "/images/modes/bus-wala.webp",
+    desc: "लंबी सड़कें, खिड़की वाली सीट",
   },
   {
     name: "चाय की टपरी",
     image: "/images/modes/chai-tapri.webp",
+    desc: "चाय, बातचीत और सड़क किनारे के गीत",
   },
   {
     name: "नाइट शिफ्ट",
     image: "/images/modes/raat-ki-shift.webp",
+    desc: "देर रात, खाली सड़कें और हेडफ़ोन",
+  },
+  {
+    name: "बारिश",
+    image: "/images/modes/monsoon.webp",
+    desc: "बाहर बारिश, अंदर संगीत",
+  },
+  {
+    name: "छोटू नाई",
+    image: "/images/modes/saloon.webp",
+    desc: "पुराने आईने, कैसेट की धुनें",
+  },
+  {
+    name: "ट्रक वाला",
+    image: "/images/modes/truck-wala.webp",
+    desc: "हाइवे, ढाबे और देसी सफ़र",
   },
 ];
 
@@ -22,22 +41,24 @@ export default function AboutPage() {
       <RaahiSidebar />
 
       <div className="about-page-container">
-        <section className="about-hero-new">
+        {/* HERO */}
+        <section className="about-hero-new raahi-fade-in-up">
           <p className="about-eyebrow">
-            ABOUT
+            01 — ABOUT
           </p>
 
           <h1>
-            राही
+            राही • <em>RAAHI</em>
           </h1>
 
           <p className="about-intro">
             RAAHI is a collection of musical worlds inspired by
-            everyday people, places and journeys.
+            everyday people, places and journeys across India.
           </p>
         </section>
 
-        <section className="about-story-new">
+        {/* STORY */}
+        <section className="about-story-new raahi-fade-in-up">
           <div className="about-story-heading">
             <span>01</span>
 
@@ -65,14 +86,15 @@ export default function AboutPage() {
 
             <Link
               href="/modes"
-              className="about-modes-link"
+              className="about-modes-link raahi-btn-tactile"
             >
-              Explore modes →
+              Explore all 12 modes →
             </Link>
           </div>
         </section>
 
-        <section className="about-modes-preview">
+        {/* PREVIEW GRID */}
+        <section className="about-modes-preview raahi-fade-in-up">
           <div className="about-preview-header">
             <span>02</span>
 
@@ -84,11 +106,12 @@ export default function AboutPage() {
           </div>
 
           <div className="about-preview-grid">
-            {modeImages.map((mode) => (
+            {modeImages.map((mode, index) => (
               <Link
                 href="/modes"
-                className="about-preview-card"
+                className="about-preview-card raahi-btn-tactile"
                 key={mode.name}
+                style={{ animationDelay: `${index * 80}ms` }}
               >
                 <img
                   src={mode.image}
@@ -97,9 +120,14 @@ export default function AboutPage() {
 
                 <div className="about-preview-overlay" />
 
-                <span>
-                  {mode.name}
-                </span>
+                <div className="about-preview-card-info">
+                  <span className="about-preview-card-title">
+                    {mode.name}
+                  </span>
+                  <span className="about-preview-card-desc">
+                    {mode.desc}
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

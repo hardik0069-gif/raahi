@@ -5185,3 +5185,1012 @@ body {
 .curved-modes-carousel .mode-card-new-title-line + .mode-card-new-title-line {
   margin-top: 1px !important;
 }
+
+.raahi-home-cursor-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+.raahi-home-overlay {
+  z-index: 3;
+}
+
+.raahi-home-content {
+  z-index: 10;
+}
+
+.raahi-home-new {
+  cursor: default;
+}
+
+/* =========================================================
+   RAAHI MOTION & ANIMATION SYSTEM
+   Harmonious, soulful, and performance-optimized
+   ========================================================= */
+
+/* --- Core Keyframes --- */
+@keyframes raahiFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes raahiFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes raahiTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes raahiAmbientZoom {
+  0%, 100% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes raahiPulseGlow {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 16px rgba(214, 185, 140, 0.25);
+  }
+  50% {
+    opacity: 0.95;
+    box-shadow: 0 0 28px rgba(214, 185, 140, 0.5);
+  }
+}
+
+@keyframes raahiSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes raahiShimmer {
+  0% {
+    transform: translateX(-140%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(180%) rotate(25deg);
+  }
+}
+
+@keyframes raahiRipple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes raahiLiveDot {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* --- Utility Motion Classes --- */
+.raahi-fade-in {
+  animation: raahiFadeIn 420ms ease-out forwards;
+}
+
+.raahi-fade-in-up {
+  animation: raahiFadeInUp 520ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.raahi-text-reveal {
+  animation: raahiTextReveal 460ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.raahi-ambient-zoom {
+  animation: raahiAmbientZoom 28s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.raahi-btn-tactile {
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease !important;
+}
+
+.raahi-btn-tactile:active {
+  transform: scale(0.95) !important;
+}
+
+/* --- Home Page Enhancements --- */
+.raahi-home-ambient-bloom {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 28% 42%,
+      rgba(214, 185, 140, 0.09) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 80% 75%,
+      rgba(101, 196, 102, 0.05) 0%,
+      transparent 55%
+    );
+}
+
+.raahi-home-hero {
+  position: absolute;
+  left: clamp(28px, 6.5vw, 110px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  max-width: 580px;
+  pointer-events: auto;
+}
+
+.raahi-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  background: rgba(12, 14, 13, 0.52);
+  backdrop-filter: blur(14px);
+  color: #d6b98c;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.raahi-hero-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #65c466;
+  box-shadow: 0 0 10px rgba(101, 196, 102, 0.6);
+  animation: raahiLiveDot 2s ease-in-out infinite;
+}
+
+.raahi-hero-title {
+  margin: 0;
+  color: #eee9df;
+  font-size: clamp(38px, 4.6vw, 68px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.raahi-hero-title em {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #d6b98c;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+.raahi-hero-hindi {
+  margin: 16px 0 0;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(238, 233, 223, 0.78);
+}
+
+.raahi-hero-desc {
+  margin: 14px 0 0;
+  max-width: 440px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(238, 233, 223, 0.52);
+}
+
+.raahi-home-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.raahi-journey-ticker {
+  position: absolute;
+  left: clamp(28px, 6.5vw, 110px);
+  bottom: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  background: rgba(12, 14, 13, 0.55);
+  backdrop-filter: blur(18px);
+  color: #eee9df;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+  z-index: 10;
+}
+
+.raahi-journey-ticker:hover {
+  background: rgba(238, 233, 223, 0.1);
+  border-color: rgba(214, 185, 140, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.raahi-ticker-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d6b98c;
+  box-shadow: 0 0 8px rgba(214, 185, 140, 0.7);
+  animation: raahiLiveDot 1.8s ease-in-out infinite;
+}
+
+.raahi-ticker-label {
+  color: rgba(238, 233, 223, 0.5);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.raahi-ticker-name {
+  color: #eee9df;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  animation: raahiTextReveal 420ms ease-out forwards;
+}
+
+.raahi-ticker-arrow {
+  color: #d6b98c;
+  transition: transform 200ms ease;
+}
+
+.raahi-journey-ticker:hover .raahi-ticker-arrow {
+  transform: translateX(3px);
+}
+
+.raahi-surprise-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 22px;
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  border-radius: 16px;
+  background: rgba(12, 14, 13, 0.42);
+  backdrop-filter: blur(16px);
+  color: rgba(238, 233, 223, 0.88);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.raahi-surprise-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(12, 14, 13, 0.65);
+  border-color: rgba(214, 185, 140, 0.4);
+  color: #eee9df;
+}
+
+.raahi-surprise-spark {
+  color: #d6b98c;
+  transition: transform 300ms ease;
+}
+
+.raahi-surprise-btn:hover .raahi-surprise-spark {
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* --- Modes Page Atmosphere & Details --- */
+.modes-ambient-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(0.42);
+  opacity: 0.5;
+  transition: background-image 600ms ease-in-out;
+  pointer-events: none;
+}
+
+.modes-ambient-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(8, 9, 9, 0.88) 75%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 9, 0.96) 0%,
+      rgba(8, 9, 9, 0.72) 45%,
+      rgba(8, 9, 9, 0.45) 100%
+    );
+  pointer-events: none;
+}
+
+.modes-ambient-spotlight {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(214, 185, 140, 0.08) 0%,
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.modes-intro-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  max-width: 440px;
+}
+
+.modes-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(238, 233, 223, 0.14);
+  background: rgba(12, 14, 13, 0.45);
+  backdrop-filter: blur(14px);
+  width: fit-content;
+  color: #d6b98c;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+}
+
+.modes-counter-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d6b98c;
+  animation: raahiLiveDot 1.6s ease-in-out infinite;
+}
+
+.modes-active-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.modes-active-hindi {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 36px);
+  font-weight: 400;
+  color: #eee9df;
+  letter-spacing: -0.02em;
+}
+
+.modes-active-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(238, 233, 223, 0.62);
+  max-width: 380px;
+}
+
+.modes-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 22px;
+  margin-top: 10px;
+  width: fit-content;
+  border-radius: 14px;
+  border: 1px solid rgba(214, 185, 140, 0.35);
+  background: rgba(214, 185, 140, 0.08);
+  backdrop-filter: blur(14px);
+  color: #eee9df;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.modes-enter-btn:hover {
+  background: rgba(214, 185, 140, 0.18);
+  border-color: rgba(214, 185, 140, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.modes-enter-arrow {
+  color: #d6b98c;
+  transition: transform 200ms ease;
+}
+
+.modes-enter-btn:hover .modes-enter-arrow {
+  transform: translateX(4px);
+}
+
+.modes-nav-hint {
+  margin-top: 18px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(238, 233, 223, 0.35);
+}
+
+/* --- Modes Carousel & Card Shimmer --- */
+.mode-card-new {
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-card-shimmer {
+  position: absolute;
+  inset: -60% -20%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 100%
+  );
+  animation: raahiShimmer 4.5s ease-in-out infinite;
+}
+
+.mode-card-is-active {
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(214, 185, 140, 0.4) !important;
+}
+
+.mode-card-action-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  margin-top: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 14, 13, 0.6);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  width: fit-content;
+  transition: background 200ms ease;
+}
+
+.mode-card-play-icon {
+  display: grid;
+  place-items: center;
+  color: #d6b98c;
+}
+
+.modes-dot-tooltip {
+  position: absolute;
+  bottom: 28px;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(12, 14, 13, 0.88);
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  backdrop-filter: blur(12px);
+  color: #eee9df;
+  font-size: 11px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: raahiFadeInUp 200ms ease-out forwards;
+}
+
+.modes-dot {
+  cursor: pointer;
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.modes-dot:hover {
+  background: #d6b98c !important;
+  transform: scale(1.3) !important;
+}
+
+.modes-dot-active {
+  box-shadow: 0 0 10px rgba(214, 185, 140, 0.7);
+}
+
+/* --- Player Page Elements & Visualizer --- */
+.player-page-ambient-glow {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 580px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(214, 185, 140, 0.12) 0%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.player-top-right-nav {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 100;
+}
+
+.player-next-journey-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  background: rgba(12, 14, 13, 0.52);
+  backdrop-filter: blur(16px);
+  color: #eee9df;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.player-next-journey-pill:hover {
+  background: rgba(238, 233, 223, 0.1);
+  border-color: rgba(214, 185, 140, 0.4);
+  transform: translateY(-2px);
+}
+
+.player-next-label {
+  color: rgba(238, 233, 223, 0.5);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.player-next-name {
+  color: #d6b98c;
+  font-weight: 500;
+}
+
+.player-mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(238, 233, 223, 0.14);
+  background: rgba(12, 14, 13, 0.45);
+  backdrop-filter: blur(14px);
+  color: #d6b98c;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  margin-bottom: 14px;
+}
+
+.player-mode-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #65c466;
+  box-shadow: 0 0 8px rgba(101, 196, 102, 0.7);
+  animation: raahiLiveDot 1.8s ease-in-out infinite;
+}
+
+.player-page-new-desc {
+  margin: 14px 0 0;
+  max-width: 480px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(238, 233, 223, 0.62);
+  font-weight: 300;
+}
+
+.player-top-indicator-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.raahi-visualizer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(12, 14, 13, 0.35);
+  border: 1px solid rgba(238, 233, 223, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.raahi-visualizer-canvas {
+  display: block;
+}
+
+.song-artwork-playing {
+  animation: raahiSpinSlow 24s linear infinite;
+  box-shadow: 0 0 20px rgba(214, 185, 140, 0.3) !important;
+}
+
+.song-artwork-glow-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 14px;
+  border: 1px solid rgba(214, 185, 140, 0.4);
+  pointer-events: none;
+  animation: raahiLiveDot 2s ease-in-out infinite;
+}
+
+.player-play-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 185, 140, 0.5);
+  pointer-events: none;
+  animation: raahiRipple 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.player-time-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(238, 233, 223, 0.55);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  margin: 0 8px;
+  white-space: nowrap;
+}
+
+.player-time-separator {
+  opacity: 0.4;
+}
+
+/* Volume popover control */
+.player-volume-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.player-volume-btn {
+  color: rgba(238, 233, 223, 0.75) !important;
+}
+
+.player-volume-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(14, 16, 15, 0.92);
+  border: 1px solid rgba(238, 233, 223, 0.16);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  z-index: 80;
+}
+
+.player-volume-popover-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.player-volume-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(238, 233, 223, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.player-volume-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d6b98c;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(214, 185, 140, 0.6);
+}
+
+.player-volume-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #d6b98c;
+  cursor: pointer;
+}
+
+.player-keyboard-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: rgba(238, 233, 223, 0.35);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* --- Morphing Hamburger Menu & Sidebar Stagger --- */
+.raahi-menu-button {
+  transition:
+    transform 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.raahi-menu-bar {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 999px;
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 240ms ease;
+  transform-origin: center center;
+}
+
+.raahi-menu-button-open .raahi-menu-bar-1 {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.raahi-menu-button-open .raahi-menu-bar-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.raahi-menu-button-open .raahi-menu-bar-3 {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.raahi-sidebar-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.raahi-sidebar-logo-sub {
+  font-size: 16px;
+  color: #d6b98c;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.raahi-sidebar-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.raahi-sidebar-close:hover {
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.raahi-link-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.raahi-active-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d6b98c;
+  box-shadow: 0 0 8px rgba(214, 185, 140, 0.8);
+  animation: raahiLiveDot 1.8s ease-in-out infinite;
+}
+
+.raahi-sidebar-link-active {
+  color: #fff !important;
+}
+
+.raahi-sidebar-link-active .raahi-sidebar-number {
+  color: #d6b98c !important;
+}
+
+/* Stagger animation for sidebar navigation */
+.raahi-sidebar-open .raahi-stagger-1 {
+  animation: raahiFadeInUp 400ms 60ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.raahi-sidebar-open .raahi-stagger-2 {
+  animation: raahiFadeInUp 400ms 110ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.raahi-sidebar-open .raahi-stagger-3 {
+  animation: raahiFadeInUp 400ms 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.raahi-sidebar-open .raahi-stagger-4 {
+  animation: raahiFadeInUp 400ms 210ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.raahi-sidebar-open .raahi-stagger-5 {
+  animation: raahiFadeInUp 400ms 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.raahi-sidebar-open .raahi-stagger-6 {
+  animation: raahiFadeInUp 400ms 310ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.raahi-footer-sub {
+  display: block;
+  margin-top: 4px;
+  color: #d6b98c;
+  font-size: 11px;
+}
+
+/* --- Mobile Responsive Optimizations --- */
+@media (max-width: 768px) {
+  .raahi-home-hero {
+    left: 20px;
+    right: 20px;
+    top: 42%;
+    max-width: none;
+  }
+
+  .raahi-journey-ticker {
+    left: 20px;
+    bottom: 95px;
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .raahi-home-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .raahi-surprise-btn {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .player-top-right-nav {
+    top: 18px;
+    right: 18px;
+  }
+
+  .player-next-journey-pill {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+
+  .player-next-label {
+    display: none;
+  }
+
+  .player-keyboard-hint {
+    display: none;
+  }
+
+  .player-time-display {
+    display: none;
+  }
+
+  .player-top-indicator-row {
+    gap: 8px;
+  }
+
+  .raahi-visualizer-container {
+    padding: 2px 6px;
+  }
+}
+
+/* --- Accessibility: Respect reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .raahi-ambient-zoom,
+  .raahi-hero-pulse-dot,
+  .raahi-ticker-indicator,
+  .modes-counter-live-dot,
+  .mode-card-shimmer,
+  .player-mode-dot,
+  .song-artwork-playing,
+  .player-play-pulse-ring,
+  .raahi-active-indicator {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .raahi-fade-in-up,
+  .raahi-fade-in,
+  .raahi-text-reveal {
+    animation-duration: 0.01ms !important;
+  }
+}
